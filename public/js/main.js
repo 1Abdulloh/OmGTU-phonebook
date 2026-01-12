@@ -1,7 +1,7 @@
 // Мобильное меню
 document.addEventListener('DOMContentLoaded', function() {
-    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-    const mobileNav = document.getElementById('mobileNav');
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const mobileNav = document.getElementById('mobile-nav');
     
     if (mobileMenuToggle && mobileNav) {
         mobileMenuToggle.addEventListener('click', function() {

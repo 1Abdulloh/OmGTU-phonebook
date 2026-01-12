@@ -77,15 +77,12 @@ body {
     background-color: var(--bg-secondary);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    overflow-x: hidden;
-    width: 100%;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 var(--spacing-md);
-    width: 100%;
 }
 
 /* ============================================
@@ -107,7 +104,6 @@ body {
     justify-content: space-between;
     padding: var(--spacing-md) 0;
     gap: var(--spacing-lg);
-    flex-wrap: wrap;
 }
 
 .logo {
@@ -144,7 +140,6 @@ body {
 .logo-text {
     display: flex;
     flex-direction: column;
-    min-width: 0; /* Позволяет тексту сжиматься */
 }
 
 .logo-title {
@@ -152,21 +147,18 @@ body {
     font-weight: 700;
     color: var(--primary-color);
     line-height: 1.2;
-    white-space: nowrap;
 }
 
 .logo-subtitle {
     font-size: var(--font-size-xs);
     color: var(--text-secondary);
     line-height: 1.2;
-    white-space: nowrap;
 }
 
 .nav {
     display: flex;
-    gap: var(--spacing-md);
+    gap: var(--spacing-lg);
     align-items: center;
-    flex-wrap: wrap;
 }
 
 .nav-link {
@@ -205,15 +197,6 @@ body {
     cursor: pointer;
     color: var(--text-primary);
     padding: var(--spacing-xs);
-    transition: var(--transition);
-}
-
-.mobile-menu-toggle:hover {
-    color: var(--primary-color);
-}
-
-.mobile-menu-toggle svg {
-    display: block;
 }
 
 .mobile-nav {
@@ -223,8 +206,6 @@ body {
     border-top: 1px solid var(--border-color);
     padding: var(--spacing-md);
     gap: var(--spacing-sm);
-    width: 100%;
-    box-shadow: var(--shadow-md);
 }
 
 .mobile-nav.active {
@@ -252,8 +233,6 @@ body {
 .main-content {
     min-height: calc(100vh - 200px);
     padding: var(--spacing-xl) 0;
-    width: 100%;
-    overflow-x: hidden;
 }
 
 /* ============================================
@@ -263,7 +242,7 @@ body {
 .hero-section {
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
     color: white;
-    padding: var(--spacing-xl) var(--spacing-md);
+    padding: var(--spacing-xl) 0;
     margin-bottom: var(--spacing-xl);
     border-radius: var(--border-radius-lg);
     overflow: hidden;
@@ -294,7 +273,6 @@ body {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-xs);
-    word-wrap: break-word;
 }
 
 .university-name {
@@ -315,15 +293,13 @@ body {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
-    padding: 0 var(--spacing-sm);
 }
 
 .hero-stats {
     display: flex;
     justify-content: center;
-    gap: var(--spacing-lg);
+    gap: var(--spacing-xl);
     flex-wrap: wrap;
-    padding: 0 var(--spacing-sm);
 }
 
 .stat-item {
@@ -1073,23 +1049,13 @@ body {
    Адаптивность
    ============================================ */
 
-/* Планшеты */
-@media (max-width: 1024px) {
-    .header-content {
-        gap: var(--spacing-md);
-    }
-    
+@media (max-width: 768px) {
     .nav {
-        gap: var(--spacing-sm);
+        display: none;
     }
     
-    .nav-link {
-        font-size: var(--font-size-xs);
-        padding: var(--spacing-xs);
-    }
-    
-    .hero-section {
-        padding: var(--spacing-lg) var(--spacing-md);
+    .mobile-menu-toggle {
+        display: block;
     }
     
     .hero-title {
@@ -1100,103 +1066,8 @@ body {
         font-size: var(--font-size-xl);
     }
     
-    .hero-description {
-        font-size: var(--font-size-base);
-    }
-    
     .hero-stats {
         gap: var(--spacing-md);
-    }
-    
-    .stat-number {
-        font-size: var(--font-size-2xl);
-    }
-    
-    .departments-grid {
-        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    }
-}
-
-/* Мобильные устройства */
-@media (max-width: 768px) {
-    .header-content {
-        padding: var(--spacing-sm) 0;
-    }
-    
-    .logo {
-        flex: 1;
-        min-width: 0;
-    }
-    
-    .logo-text {
-        flex-shrink: 1;
-    }
-    
-    .logo-title {
-        font-size: var(--font-size-base);
-    }
-    
-    .logo-subtitle {
-        font-size: 0.65rem;
-    }
-    
-    .logo-icon {
-        width: 32px;
-        height: 32px;
-        flex-shrink: 0;
-    }
-    
-    .nav {
-        display: none;
-    }
-    
-    .mobile-menu-toggle {
-        display: block;
-        flex-shrink: 0;
-    }
-    
-    .hero-section {
-        padding: var(--spacing-lg) var(--spacing-sm);
-        margin-bottom: var(--spacing-lg);
-        border-radius: var(--border-radius);
-    }
-    
-    .hero-title {
-        font-size: var(--font-size-2xl);
-        margin-bottom: var(--spacing-sm);
-    }
-    
-    .university-name {
-        font-size: var(--font-size-xl);
-    }
-    
-    .hero-subtitle {
-        font-size: var(--font-size-lg);
-    }
-    
-    .hero-description {
-        font-size: var(--font-size-sm);
-        margin-bottom: var(--spacing-lg);
-        padding: 0;
-    }
-    
-    .hero-stats {
-        gap: var(--spacing-md);
-        flex-direction: row;
-        justify-content: space-around;
-    }
-    
-    .stat-item {
-        flex: 1;
-        min-width: 80px;
-    }
-    
-    .stat-number {
-        font-size: var(--font-size-xl);
-    }
-    
-    .stat-label {
-        font-size: var(--font-size-xs);
     }
     
     .departments-grid {
@@ -1258,154 +1129,29 @@ body {
     }
 }
 
-    .search-section {
-        margin-bottom: var(--spacing-lg);
-    }
-    
-    .search-input-wrapper {
-        padding: var(--spacing-xs);
-    }
-    
-    .search-input {
-        font-size: var(--font-size-sm);
-    }
-    
-    .search-btn {
-        padding: var(--spacing-xs) var(--spacing-md);
-        font-size: var(--font-size-xs);
-    }
-    
-    .section-title {
-        font-size: var(--font-size-xl);
-        margin-bottom: var(--spacing-md);
-    }
-    
-    .departments-grid {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-sm);
-    }
-    
-    .department-card {
-        padding: var(--spacing-md);
-    }
-    
-    .contacts-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .contacts-toolbar {
-        flex-direction: column;
-        align-items: stretch;
-    }
-    
-    .filter-group {
-        flex-direction: column;
-        align-items: stretch;
-    }
-    
-    .filter-select {
-        width: 100%;
-    }
-    
-    .view-toggle {
-        align-self: flex-end;
-    }
-    
-    .contacts-grid.contacts-list .contact-card {
-        flex-direction: column;
-        align-items: stretch;
-    }
-    
-    .contacts-grid.contacts-list .contact-card-header {
-        margin-right: 0;
-        margin-bottom: var(--spacing-md);
-    }
-    
-    .contacts-grid.contacts-list .contact-card-body {
-        flex-direction: column;
-        margin-bottom: var(--spacing-md);
-    }
-    
-    .contacts-grid.contacts-list .contact-card-footer {
-        margin-left: 0;
-    }
-    
-    .department-item {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .department-item-meta {
-        justify-content: center;
-    }
-    
-    .footer-content {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* Очень маленькие экраны */
 @media (max-width: 480px) {
     .container {
         padding: 0 var(--spacing-sm);
     }
     
-    .header-content {
-        padding: var(--spacing-xs) 0;
-    }
-    
-    .logo-title {
-        font-size: var(--font-size-sm);
-    }
-    
-    .logo-subtitle {
-        font-size: 0.6rem;
-    }
-    
     .hero-section {
-        padding: var(--spacing-md) var(--spacing-sm);
+        padding: var(--spacing-lg) 0;
     }
     
     .hero-title {
-        font-size: var(--font-size-xl);
-    }
-    
-    .university-name {
-        font-size: var(--font-size-lg);
-    }
-    
-    .hero-subtitle {
-        font-size: var(--font-size-base);
-    }
-    
-    .hero-description {
-        font-size: var(--font-size-xs);
-    }
-    
-    .hero-stats {
-        flex-direction: column;
-        gap: var(--spacing-sm);
-    }
-    
-    .stat-number {
-        font-size: var(--font-size-lg);
+        font-size: var(--font-size-2xl);
     }
     
     .page-title {
-        font-size: var(--font-size-xl);
+        font-size: var(--font-size-2xl);
     }
     
     .search-input-wrapper {
         flex-direction: column;
-        gap: var(--spacing-xs);
     }
     
     .search-btn {
         width: 100%;
-    }
-    
-    .section-title {
-        font-size: var(--font-size-lg);
     }
 }
 

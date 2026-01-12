@@ -10,37 +10,6 @@ if (!isset($page_title)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $page_title; ?></title>
     <link rel="stylesheet" href="public/css/style.css">
-    <style>
-        /* Добавляем стили для выравнивания */
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            margin-left: 20%;
-            transform: translateX(-10%);
-        }
-        
-        .nav {
-            margin-right: 20%;
-            transform: translateX(10%);
-        }
-        
-        /* Для мобильных устройств возвращаем стандартное выравнивание */
-        @media (max-width: 768px) {
-            .logo {
-                margin-left: 0;
-                transform: none;
-            }
-            
-            .nav {
-                margin-right: 0;
-                transform: none;
-            }
-        }
-    </style>
 </head>
 <body>
     <header class="header">
@@ -69,26 +38,5 @@ if (!isset($page_title)) {
                     <a href="admin/login.php" class="nav-link" style="color: var(--primary-color); font-weight: 600;">Вход</a>
             <?php endif; ?>
         </nav>
-        
-        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Открыть меню">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="3" y1="6" x2="21" y2="6"></line>
-                <line x1="3" y1="12" x2="21" y2="12"></line>
-                <line x1="3" y1="18" x2="21" y2="18"></line>
-            </svg>
-        </button>
         </div>
-        
-        <nav class="mobile-nav" id="mobileNav">
-            <a href="index.php" class="mobile-nav-link">Главная</a>
-            <a href="contacts.php" class="mobile-nav-link">Все контакты</a>
-            <a href="departments.php" class="mobile-nav-link">Подразделения</a>
-            <a href="search.php" class="mobile-nav-link">Поиск</a>
-            <?php if (isset($_SESSION['user_id'])): ?>
-                <a href="admin/" class="mobile-nav-link">Админ-панель</a>
-                <a href="admin/logout.php" class="mobile-nav-link">Выйти</a>
-            <?php else: ?>
-                <a href="admin/login.php" class="mobile-nav-link" style="color: var(--primary-color); font-weight: 600;">Вход</a>
-            <?php endif; ?>
-        </nav>
     </header>
