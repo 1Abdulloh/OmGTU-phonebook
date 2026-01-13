@@ -2,59 +2,21 @@
 config/database.php
 config/yandex_oauth.php
 .env
-.env.local
 
-# Composer
+# Зависимости Composer
 /vendor/
-composer.lock
 
 # Системные файлы
 .DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
 Thumbs.db
-desktop.ini
-
-# Логи
 *.log
-logs/
-*.log.*
-
-# Временные файлы
 *.tmp
-*.temp
-*.cache
-*.swp
-*.swo
-*~
 
-# IDE
+# IDE файлы
 .idea/
 .vscode/
-*.sublime-project
-*.sublime-workspace
-*.code-workspace
+*.swp
+*.swo
 
-# База данных (если есть дампы с реальными данными)
-# Раскомментируйте следующую строку, если не хотите публиковать дампы БД
-# *.sql
-# *.dump
-
-# Загрузки пользователей (если есть)
-uploads/
-files/
-user_uploads/
-
-# XAMPP специфичные файлы
-xampp-control.ini
-
-# PHP сессии
-sessions/
-
-# Backup файлы
-*.bak
-*.backup
-*~
+# Временные файлы
+*.cache
