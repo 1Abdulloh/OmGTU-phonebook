@@ -130,6 +130,36 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         .alert {
             margin-bottom: 20px;
         }
+        
+        @media (max-width: 768px) {
+            .login-card {
+                padding: 30px 20px;
+                margin: 20px;
+                max-width: 100%;
+            }
+            
+            .login-header h1 {
+                font-size: 20px;
+            }
+            
+            .login-header p {
+                font-size: 12px;
+            }
+            
+            body {
+                padding: 10px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .login-card {
+                padding: 20px 15px;
+            }
+            
+            .login-header h1 {
+                font-size: 18px;
+            }
+        }
     </style>
 </head>
 <body>

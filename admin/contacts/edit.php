@@ -52,7 +52,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 
 <div class="container-fluid">
-    <h1 class="h3 mb-4">Редактировать контакт</h1>
+    <div class="row">
+        <?php include '../includes/admin_sidebar.php'; ?>
+        
+        <div class="col-md-10 p-4">
+            <h1 class="h3 mb-4">Редактировать контакт</h1>
     
     <?php if ($error): ?>
     <div class="alert alert-danger"><?php echo $error; ?></div>
@@ -130,6 +134,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <a href="index.php" class="btn btn-secondary">Отмена</a>
                 </div>
             </form>
+        </div>
         </div>
     </div>
 </div>

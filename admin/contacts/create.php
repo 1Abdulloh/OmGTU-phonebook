@@ -40,7 +40,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 
 <div class="container-fluid">
-    <div class="d-flex justify-content-between align-items-center mb-4">
+    <div class="row">
+        <?php include '../includes/admin_sidebar.php'; ?>
+        
+        <div class="col-md-10 p-4">
+            <div class="d-flex justify-content-between align-items-center mb-4">
         <h1 class="h3 mb-0">Добавить контакт</h1>
         <a href="../index.php" class="btn btn-secondary">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -133,6 +137,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <a href="index.php" class="btn btn-secondary">Отмена</a>
                 </div>
             </form>
+        </div>
         </div>
     </div>
 </div>

@@ -33,7 +33,11 @@ $flashMessage = get_flash_message('success') ?? get_flash_message('error');
 ?>
 
 <div class="container-fluid">
-    <div class="d-flex justify-content-between align-items-center mb-4">
+    <div class="row">
+        <?php include '../includes/admin_sidebar.php'; ?>
+        
+        <div class="col-md-10 p-4">
+            <div class="d-flex justify-content-between align-items-center mb-4">
         <h1 class="h3 mb-0">Управление контактами</h1>
         <a href="../index.php" class="btn btn-secondary">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -135,6 +139,7 @@ $flashMessage = get_flash_message('success') ?? get_flash_message('error');
                 </ul>
             </nav>
             <?php endif; ?>
+        </div>
         </div>
     </div>
 </div>

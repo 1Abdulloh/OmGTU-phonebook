@@ -13,7 +13,8 @@ if (!isset($page_title)) {
 </head>
 <body>
     <header class="header">
-        <div class="header-content">
+        <div class="container">
+            <div class="header-content">
             <a href="index.php" class="logo">
                 <div class="logo-icon">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -26,6 +27,14 @@ if (!isset($page_title)) {
                 </div>
             </a>
             
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Меню">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+            
             <nav class="nav">
                 <a href="index.php" class="nav-link">Главная</a>
                 <a href="contacts.php" class="nav-link">Все контакты</a>
@@ -37,6 +46,21 @@ if (!isset($page_title)) {
                 <?php else: ?>
                     <a href="admin/login.php" class="nav-link" style="color: var(--primary-color); font-weight: 600;">Вход</a>
             <?php endif; ?>
-        </nav>
+            </nav>
+            </div>
         </div>
+        <nav class="mobile-nav" id="mobile-nav">
+            <div class="container">
+            <a href="index.php" class="mobile-nav-link">Главная</a>
+            <a href="contacts.php" class="mobile-nav-link">Все контакты</a>
+            <a href="departments.php" class="mobile-nav-link">Подразделения</a>
+            <a href="search.php" class="mobile-nav-link">Поиск</a>
+            <?php if (isset($_SESSION['user_id'])): ?>
+                <a href="admin/" class="mobile-nav-link">Админ-панель</a>
+                <a href="admin/logout.php" class="mobile-nav-link">Выйти</a>
+            <?php else: ?>
+                <a href="admin/login.php" class="mobile-nav-link" style="color: var(--primary-color); font-weight: 600;">Вход</a>
+            <?php endif; ?>
+            </div>
+        </nav>
     </header>

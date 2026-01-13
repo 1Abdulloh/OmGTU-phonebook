@@ -77,6 +77,9 @@ body {
     background-color: var(--bg-secondary);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .container {
@@ -104,6 +107,16 @@ body {
     justify-content: space-between;
     padding: var(--spacing-md) 0;
     gap: var(--spacing-lg);
+    flex-wrap: nowrap;
+}
+
+.header-content .logo {
+    flex-shrink: 0;
+}
+
+.header-content .nav {
+    flex-shrink: 0;
+    margin-left: auto;
 }
 
 .logo {
@@ -159,6 +172,8 @@ body {
     display: flex;
     gap: var(--spacing-lg);
     align-items: center;
+    flex-wrap: nowrap;
+    overflow: visible;
 }
 
 .nav-link {
@@ -197,6 +212,13 @@ body {
     cursor: pointer;
     color: var(--text-primary);
     padding: var(--spacing-xs);
+    flex-shrink: 0;
+    margin-left: auto;
+    z-index: 1001;
+}
+
+.mobile-menu-toggle svg {
+    display: block;
 }
 
 .mobile-nav {
@@ -206,10 +228,14 @@ body {
     border-top: 1px solid var(--border-color);
     padding: var(--spacing-md);
     gap: var(--spacing-sm);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
 }
 
 .mobile-nav.active {
     display: flex;
+    max-height: 500px;
 }
 
 .mobile-nav-link {
@@ -231,8 +257,9 @@ body {
    ============================================ */
 
 .main-content {
-    min-height: calc(100vh - 200px);
+    flex: 1;
     padding: var(--spacing-xl) 0;
+    padding-bottom: var(--spacing-xl);
 }
 
 /* ============================================
@@ -988,7 +1015,7 @@ body {
     background: var(--bg-dark);
     color: white;
     padding: var(--spacing-xl) 0 var(--spacing-md);
-    margin-top: var(--spacing-xl);
+    margin-top: auto;
 }
 
 .footer-content {
@@ -1049,13 +1076,43 @@ body {
    Адаптивность
    ============================================ */
 
+@media (max-width: 1024px) {
+    .nav {
+        gap: var(--spacing-md);
+    }
+    
+    .nav-link {
+        font-size: var(--font-size-xs);
+        padding: var(--spacing-xs) var(--spacing-xs);
+    }
+}
+
 @media (max-width: 768px) {
+    .header-content {
+        padding: var(--spacing-sm) 0;
+    }
+    
     .nav {
         display: none;
     }
     
     .mobile-menu-toggle {
         display: block;
+    }
+    
+    .logo-text {
+        display: none;
+    }
+    
+    .logo-icon {
+        width: 36px;
+        height: 36px;
+    }
+    
+    .header {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
     }
     
     .hero-title {
